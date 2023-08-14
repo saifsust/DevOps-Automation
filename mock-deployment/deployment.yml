@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cabinet-mock
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+       maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: cabinet-mock
+  template:
+   metadata:
+    labels:
+      app: cabinet-mock
+   spec:
+     containers:
+      - name: cabinet-mock
+        image: mock-app:latest
+        imagePullPolicy: Never
+
