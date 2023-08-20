@@ -2,8 +2,10 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: cabinet-mock
+  labels:
+    app.kubernetes.io/name: cabinet-mock
 spec:
-  replicas: 1
+  replicas: 2
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -20,4 +22,23 @@ spec:
       - name: cabinet-mock
         image: mock-app:latest
         imagePullPolicy: Never
+        ports:
+         - containerPort: 8989
 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cabinet-mock-service
+  labels:
+    app: cabinet-moxk
+    version: v1
+spec:
+ type: LoadBalancer
+ selector:
+   app.kubernetes.io/name: cabinet-mock
+ ports:
+  - protocol: TCP
+    port: 8989
+    targetPort: 8989
+ 
