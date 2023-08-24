@@ -1,0 +1,22 @@
+cabinet:
+  hosts:
+   logic-layer:
+     ansible_user: saiful-sust
+     ansible_password: S@iFliT0N
+     ansible_host: 127.0.0.1
+     ansible_port: 2222
+   upstream:
+     ansible_user: saiful-sust
+     ansible_password: S@iFliT0N
+     ansible_host: 127.0.0.1
+     ansible_port: 3333
+
+
+cabinetdb:
+  hosts:
+   inner:
+     ansible_user: database
+     ansible_password: S@iFliT0N
+     ansible_host: 127.0.0.1
+     ansible_port: 4444
+
