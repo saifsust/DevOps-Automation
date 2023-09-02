@@ -53,10 +53,11 @@ metadata:
  name: cabinet-ingress
 spec:
  ingressClassName: nginx
- rules:
-  - http:
+ rules:    
+  - host: "www.cabinet.com"
+    http:
      paths:
-       - path: /file-search
+       - path: /files-search
          pathType: Prefix
          backend:
            service:
