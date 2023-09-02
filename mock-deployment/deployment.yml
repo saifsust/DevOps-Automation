@@ -58,7 +58,7 @@ spec:
     http:
      paths:
        - path: /files-search
-         pathType: Prefix
+         pathType: Exact
          backend:
            service:
              name: cabinet-service
@@ -66,10 +66,26 @@ spec:
               number: 80
               
        - path: /file-insert
-         pathType: Prefix
+         pathType: Exact
          backend:
           service:
             name: cabinet-service
             port:
              number: 80
+
+       - path: /folder-files-get
+         pathType: Exact
+         backend:
+          service:
+            name: cabinet-service
+            port:
+             number: 80
+       
+       - path: /folders-get
+         pathType: Exact
+         backend:
+           service:
+             name: cabinet-service
+             port:
+              number: 80
  
