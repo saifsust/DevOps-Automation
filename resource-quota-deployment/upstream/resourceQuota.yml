@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: upstrm-rq
+  namespace: ckad
+spec:
+ hard:
+  cpu: "1000"
+  memory: 10Gi
+  pods: "3"
+

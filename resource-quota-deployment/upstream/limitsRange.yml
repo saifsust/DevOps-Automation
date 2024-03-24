@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: LimitRange
+metadata:
+ name: upstrm-lr
+ namespace: ckad
+spec:
+  limits:
+    - default:
+        cpu: 100m
+      defaultRequest:
+        cpu: 50m
+      max:
+       cpu: 250m
+      min:
+       cpu: 50m
+      type: Container
