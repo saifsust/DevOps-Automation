@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: upstream-rq
+  namespace: ckad
+spec:
+  hard:
+   pods: 3
+   cpu: 1000m
+   memory: 6Gi
+

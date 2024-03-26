@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: upstream-lr
+  namespace: ckad
+spec:
+ limits:
+   - default:
+       cpu: 120m
+     defaultRequest:
+       cpu: 100m
+     max: 
+      cpu: 200m
+     min:
+      cpu: 100m
+     type: Container

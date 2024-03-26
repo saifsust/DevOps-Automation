@@ -4,7 +4,7 @@ metadata:
  name: upstream-srv
  namespace: ckad
 spec:
- type: NodePort
+ type: LoadBalancer
  selector:
    app.kubernets.io/name: upstream-app
  ports:

@@ -14,7 +14,7 @@ spec:
      app: upstream-app
  template:
     metadata:
-       name: upstream
+       name: upstream-app
        labels:
          app: upstream-app
          version: 1.0.0

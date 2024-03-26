@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: ckad
+  name: upstream-cm
+data:
+   active: cabinet
