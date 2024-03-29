@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: upstream-dply
+  namespace: ckad
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+       app: upstream-app
+  template:
+   metadata:
+    name: upstream-app
+    labels:
+      app: upstream-app
+   spec:
+    containers:
+      - name: upstream-cntr
+        image: upstream
+        imagePullPolicy: IfNotPresent
+        ports:
+         - containerPort: 8080
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          valueFrom:
+            secretKeyRef:
+              name: upstream-sc
+              key: active
+
