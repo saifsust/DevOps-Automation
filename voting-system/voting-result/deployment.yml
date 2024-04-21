@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: voting-result
+  namespace: voting-app-namespace
 spec:
   replicas: 2
   strategy:
