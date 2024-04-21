@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis
+  labels:
+    name: voting-app-redis-svc
+    app: voting-app
+spec:
+  type: ClusterIP
+  selector:
+    name: in-memory-db-pod
+    app: voting-app
+  ports:
+   - name: in-memory-db
+     protocol: TCP
+     port: 6379
+     targetPort: 6379
