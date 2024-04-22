@@ -4,7 +4,7 @@ metadata:
   name: voting-app-svc
   namespace: voting-app-namespace
 spec:
- type: NodePort
+ type: LoadBalancer
  selector:
    name: voting-front-pod
    app: voting-app

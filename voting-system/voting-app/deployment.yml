@@ -4,7 +4,7 @@ metadata:
   name: voting-front-app
   namespace: voting-app-namespace
 spec:
-  replicas: 2
+  replicas: 4
   strategy:
     type: RollingUpdate
     rollingUpdate:
